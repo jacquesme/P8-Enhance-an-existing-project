@@ -123,13 +123,16 @@
 	Controller.prototype.editItemSave = function (id, title) {
 		var self = this;
 
-		while (title[0] === " ") {
+		/*while (title[0] === " ") {
 			title = title.slice(1);
 		}
 
 		while (title[title.length-1] === " ") {
 			title = title.slice(0, -1);
-		}
+		}*/
+
+		// LOOP OPTIMIZATION //
+		title = title.trim(); // Trim function removes all leading and trailing spaces in the string
 
 		if (title.length !== 0) {
 			self.model.update(id, {title: title}, function () {

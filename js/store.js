@@ -126,12 +126,12 @@
 		
 		for (var i = 0; i < todos.length; i++) {
 			if (todos[i].id === id) { //Change to === instead of ==
-				todoId = todos[i].id;
+				// todoId = todos[i].id;  Not needed
 				todos.splice(i, 1); //Removed from line 136 and placed here
 			}
 		}
 
-		// Removed
+		//not needed seems like duplicate code doing nothing
 		/* for (var i = 0; i < todos.length; i++) {
 			if (todos[i].id == todoId) {
 				todos.splice(i, 1);
