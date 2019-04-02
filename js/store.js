@@ -81,12 +81,15 @@
 		callback = callback || function () {};
 
 		// Generate an ID
-	    var newId = ""; 
-	    var charset = "0123456789";
 
+		var newId = new Date().getUTCMilliseconds(); // Used a time stamp to create an once off id 
+
+	    /*var newId = ""; 
+		var charset = "0123456789"; 
+	
         for (var i = 0; i < 6; i++) {
-     		newId += charset.charAt(Math.floor(Math.random() * charset.length));
-		}
+     		newId += charset.charAt(Math.floor(Math.random() * charset.length));//
+		}*/
 
 		// If an ID was actually given, find the item and update each property
 		if (id) {
