@@ -60,9 +60,12 @@ describe('controller', function () {
 
 	it('should show entries on start-up', function () {
 		// TODO: write test
-		var todo = {}; //on start todos are empty
-        setUpModel([todo]); //setsup the model
-        subject.setView(''); //set the view
+		//on start todos are empty
+		var todo = {}; 
+		//setsup the model
+		setUpModel([todo]); 
+		//set the view without a specific view
+        subject.setView(''); 
         //expects the view to render with showEntries and the empty array
         expect(view.render).toHaveBeenCalledWith('showEntries', [todo]);
 
@@ -91,6 +94,7 @@ describe('controller', function () {
 		it('should show active entries', function () {
 			// TODO: write test
 			var todo = {title: 'my todo', completed: false};
+			//setsup the model
 			setUpModel([todo]);
 			//set view to active
 			subject.setView('#/active'); 
@@ -106,10 +110,10 @@ describe('controller', function () {
 		it('should show completed entries', function () {
 			// TODO: write test
 			var todo = {title: 'my todo', completed: true};
+			// set the model
             setUpModel([todo]);
-
-            subject.setView('#/completed'); //set view to completed
-
+			//set view to completed
+            subject.setView('#/completed'); 
             //model read called with completed false and function
             expect(model.read).toHaveBeenCalledWith({completed:true}, jasmine.any(Function));
             //view render called with function showEntries and array of todos
@@ -164,9 +168,11 @@ describe('controller', function () {
 
 	it('should highlight "All" filter by default', function () {
 		// TODO: write test
+		// var with empty string
 		var currentPage = '';
+		// set the model
         setUpModel([]);
-
+		// set the view without a specific view
         subject.setView('');
         expect(view.render).toHaveBeenCalledWith('setFilter', currentPage);
         expect(currentPage).toEqual('');
@@ -176,8 +182,9 @@ describe('controller', function () {
 	it('should highlight "Active" filter when switching to active view', function () {
 		// TODO: write test
 		var currentPage = "active";
+		// set the model
         setUpModel([]);
-
+		// set view to active
         subject.setView('#/active');
         expect(view.render).toHaveBeenCalledWith('setFilter', currentPage);
         expect(currentPage).toEqual('active');
@@ -224,7 +231,8 @@ describe('controller', function () {
 		it('should add a new todo to the model', function () {
 			// TODO: write test
 			// similar to below
-            setUpModel([]);
+			setUpModel([]);
+			// set the view without a specific view
             subject.setView('');
             view.trigger('newTodo', 'my new todo');
            //model.create called with the todo name and the function
