@@ -63,7 +63,7 @@ describe('controller', function () {
 		var todo = {}; //on start todos are empty
         setUpModel([todo]); //setsup the model
         subject.setView(''); //set the view
-        //expects the view to render with showEntries and the empty arrayb
+        //expects the view to render with showEntries and the empty array
         expect(view.render).toHaveBeenCalledWith('showEntries', [todo]);
 
 	});
