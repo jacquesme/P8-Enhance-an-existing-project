@@ -10,5 +10,5 @@
 <p>Optimize the performance of a project using DevTools</p>
 <p>Implement unit and functional tests in a web application</p>
 <p>Take over an existing JavaScript project</p>
-
+<p>Here is the link: https://jacquesme.github.io/P8-Enhance-an-existing-project/</p>
 <img src = "image/image1.png">
